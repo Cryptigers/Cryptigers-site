@@ -11,6 +11,10 @@
   --neon-orange: #ff6600;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   background: var(--background);
   color: var(--foreground);
@@ -20,7 +24,36 @@ html, body {
   font-family: var(--font-space-mono), monospace;
 }
 
-/* Убираем стандартный focus-outline у браузера — потом сделаем свои */
 * {
   box-sizing: border-box;
+}
+
+/* Scanline эффект — тонкие горизонтальные полоски как на ЭЛТ-мониторе */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 0, 255, 0.04) 2px,
+    rgba(255, 0, 255, 0.04) 4px
+  );
+}
+
+/* Анимация пульсации неонового свечения */
+@keyframes neon-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px #ff00ff66);
+  }
+  50% {
+    filter: drop-shadow(0 0 24px #ff00ffaa);
+  }
+}
+
+.neon-pulse {
+  animation: neon-pulse 3s ease-in-out infinite;
 }

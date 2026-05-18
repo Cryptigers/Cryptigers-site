@@ -45,7 +45,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center justify-center pt-20 pb-32 px-6">
         {/* Synthwave-солнце */}
         <div
-          className="relative mb-8"
+          className="relative mb-8 neon-pulse"
           style={{
             width: "260px",
             height: "130px",

@@ -20,8 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceMono.variable} antialiased`}>
-        {children}
+<body className={`${spaceMono.variable} antialiased scanlines`}>        {children}
       </body>
     </html>
   );
